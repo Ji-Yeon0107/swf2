@@ -20,6 +20,7 @@
 body {
     width:100vw;
     min-height:100vh;
+    padding-bottom:20px;
 }
 /* 시작화면 */
 .logo {
