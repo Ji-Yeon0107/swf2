@@ -16,6 +16,7 @@
     list-style:none;
     font-family:agroL;
     _box-sizing:border-box;
+-webkit-tap-highlight-color : transparent;
 }
 body {
     width:100vw;
