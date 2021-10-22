@@ -148,11 +148,12 @@ const Result = () => {
         )
 
       }else {
+        return(
         <>
-        <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
             <p>뭔가 잘못됐어요 😅</p>
-            <p className="result-title low-score"> 다시 진행해주세요</p>
+            <p className="result-title"> 다시 진행해주세요</p>
         </>
+        )
       }
     }
 
