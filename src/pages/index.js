@@ -19,14 +19,14 @@ const Home = () => {
     },[])
     
     return(
-        <div>
+        <>
             {
                 start
                 ?(
                     <Questions showResult={showResult} setShowResult={setShowResult} ></Questions>
                 )
                 : (
-                    <>
+                    <div className="main-wrapper">
                         <p>
                             <img className="logo" src="/logo.png" alt="logo" />
                         </p>
@@ -35,14 +35,11 @@ const Home = () => {
                         setStart(true);
                         }}>시작!!</button>
                         <div>광고</div>
-                    </>
+                    </div>
                 )
             }
             
-            
-
-            
-        </div>
+        </>
        
     )
 }
