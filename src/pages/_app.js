@@ -24,6 +24,8 @@ const App = ({ Component }) => (
             <script>
                 Kakao.init('178a2bb850640c5dee765d4a93e39bfb');
             </script>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819"
+     crossorigin="anonymous"></script>
             <title>스우파 과몰입꾼 테스트</title>
         </Head>
         <RecoilRoot>
