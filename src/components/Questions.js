@@ -12,6 +12,7 @@ export const Questions = () => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useRecoilState(scoreState);
 
+    // 다음문제 넘어갈 때 동작
     const nextQuestion = () =>{
         setTimeout(()=>{
             setTest(true);
@@ -20,21 +21,20 @@ export const Questions = () => {
         clearTimeout();
     }
     
-
-
     useEffect(()=>{
         if(test) {
             if(index<questions.length) {
-// 클래스명 제거
-const selectedAnswer = document.querySelector('.selected')
-console.log('reload')
-selectedAnswer.classList.remove('selected');
-selectedAnswer.className +=' pre-select'
+
+                // 클래스명 추가,제거
+                const selectedAnswer = document.querySelector('.selected')
+                console.log('reload')
+                selectedAnswer.classList.remove('selected');
+                selectedAnswer.className +=' pre-select'
 
 
                 // 진행바 길이 (width)변화
                 let pickedBar = document.querySelector('.bar');
-                pickedBar.style.width = `calc((100% / ${questions.length}) * ${index+2})`
+                pickedBar.style.width = `calc((100% / ${questions.length}) * (1 + ${index}))`
 
                 // 보기 위치 무작위 배치
                 const checkAnswer = () => {
@@ -46,19 +46,7 @@ selectedAnswer.className +=' pre-select'
                 checkAnswer();
             }
         }
-
-        
-
     },[index])
-
-    
-    // useEffect(()=>{
-    //     const test2 = document.querySelector(".answer-number>div");
-    //     const test3 = document.querySelector(".answer-list>div");
-    //     // test2.style.height = test3.style.height
-    //     console.log(test2.style.height)
-    // console.log(test3.style.height)
-    // })
 
     
 // 문제 숫자 0 제어
@@ -132,9 +120,9 @@ if(test) {
     } else {
     return (
         <div>
-            <h1>결과를 확인해보세요 과연 나의 점수는?</h1>
-            <Link href={`/Result?name=${score}`} >
-                결과 확인하기
+            <h1>결과를 확인해보세요!<br/>과연 나의 점수는?</h1>
+            <Link href={`/Result?score=${score}`} as="/result" >
+                <button className="check-result-button">결과 확인하기</button>
             </Link>
         </div>
     )
@@ -222,5 +210,5 @@ const barStyle = {
     width: `calc(100% / ${questions.length})`,
     height:"100%",
     background:"rgba(255,255,255,1)",
-    // marginTop:"30px",
+    transition:"all 200ms",
 }
