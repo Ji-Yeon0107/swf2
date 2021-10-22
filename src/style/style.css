@@ -85,7 +85,7 @@ body {
 .inner {
     width:320px;
     margin:0 auto;
-    padding-top:38px;
+    padding-top:26px;
 }
 
 .question-number {
@@ -95,7 +95,7 @@ body {
     margin-bottom:16px;
 }
 .question-imgbox {
-    margin-top:50px;
+    margin-top:48px;
     margin-bottom:35px;
     text-align:center;
     height:220px;
@@ -110,7 +110,7 @@ body {
 }
 .question {
     color:rgb(255,255,255);
-    font-size:1.8em;
+    font-size:30px;
     font-family:agroM;
     margin-bottom:35px;
     word-break:keep-all;
@@ -138,7 +138,7 @@ body {
     height:45px;
     padding:12px;
     line-height:23px;
-    margin-bottom:20px;
+    margin-bottom:18px;
     font-size:18px;
     border-radius:50px;
 -webkit-tap-highlight-color : rgba(255,255,255,0);

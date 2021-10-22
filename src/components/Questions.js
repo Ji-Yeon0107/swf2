@@ -26,8 +26,12 @@ export const Questions = () => {
             if(index<questions.length) {
                 // 3지선다에서 2지선다로 넘어갈 때 A3 없애기
                 if(questions[index].A3.A===""){
-                    const hideAnswer = document.querySelector('div.answer3');
+                    var hideAnswer = document.querySelector('div.answer3');
                     hideAnswer.style.display="none";
+                }else{
+                    var hideAnswer = document.querySelector('div.answer3');
+                    hideAnswer.style.display="block";
+
                 }
 
                 // 클래스명 추가,제거  
@@ -115,7 +119,7 @@ const showPage = ()=> {
                                 setClick(false);
                                 nextQuestion();
                             }
-                            }>{questions[index].A1.A}
+                            }>A {questions[index].A1.A}
                             
                             </div>
                             <div className="answer2 pre-select answer-list-item" onClick={function(){
@@ -130,7 +134,7 @@ const showPage = ()=> {
                                setClick(false);
                                 nextQuestion();
                             }
-                            }>{questions[index].A2.A}</div>
+                            }>B {questions[index].A2.A}</div>
 
                             <div className="answer3 pre-select answer-list-item" onClick={function(){
                                                         
@@ -143,7 +147,7 @@ const showPage = ()=> {
                                 setClick(false);
                                     nextQuestion();
                                 }
-                                }>{questions[index].A3.A}
+                                }>C {questions[index].A3.A}
                             </div>
                         </div>
                     </div>
