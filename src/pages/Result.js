@@ -129,7 +129,7 @@ const Result = () => {
             </p>
           </>
         )
-      } else {
+      } else if(router.query.score>=0 && router.query.score<5) {
         return(
           <>
             <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
@@ -147,6 +147,12 @@ const Result = () => {
           </>
         )
 
+      }else {
+        <>
+        <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
+            <p>뭔가 잘못됐어요 😅</p>
+            <p className="result-title low-score"> 다시 진행해주세요</p>
+        </>
       }
     }
 
