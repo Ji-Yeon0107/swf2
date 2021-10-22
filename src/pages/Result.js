@@ -25,10 +25,9 @@ const Result = () => {
   }
 });
     }
-
+// console.log(level);
     const classifyScore = () =>{
       if(router.query.score == 100) {
-        setLevel(`과몰입 상위 1% "스우파 처돌이"`);
         return(
           <>
             <h2><span className="result-score high-score">{router.query.score}</span><span>점!!!</span></h2>
@@ -44,7 +43,6 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=90 && router.query.score<100) {
-        setLevel(`과몰입 상위 20% "스우파 중독자"`);
         return(
           <>
             <h2><span className="result-score high-score">{router.query.score}</span><span>점!!!</span></h2>
@@ -61,7 +59,6 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=65 && router.query.score<90) {
-        setLevel(`과몰입 상위 35% "스우파 쁘띠중독"`);
         
         return(
           <>
@@ -79,7 +76,6 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=50 && router.query.score<65) {
-        setLevel(`과몰입 상위 50% "스우파며드는 중"`);
 
         return(
           <>
@@ -96,8 +92,6 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=35 && router.query.score<50) {
-        setLevel(`항문기는 아니고 "스우파 입덕부정기"`);
-
         return(
           <>
             <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
@@ -113,8 +107,6 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=15 && router.query.score<35) {
-        setLevel(`과몰입 하위 35% "어디서 본건 있는 사람"`);
-
         return(
           <>
             <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
@@ -129,7 +121,6 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=5 && router.query.score<15) {
-        setLevel(`과몰입 하위 15% "스우파를 모르고 죽을뻔한 사람"`);
 
         return(
           <>
@@ -145,7 +136,7 @@ const Result = () => {
           </>
         )
       } else if(router.query.score>=0 && router.query.score<5) {
-        setLevel(`... 그냥 "지나가던 행인"`);
+       
         return(
           <>
             <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
