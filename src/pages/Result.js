@@ -22,6 +22,7 @@ const Result = () => {
           templateArgs: {
             'score': router.query.score,
             'level': level,
+            'url': "/result.png"
   }
 });
     }
@@ -50,7 +51,7 @@ const Result = () => {
       }
     },[])
 
-
+    
     const classifyScore = () =>{
       if(router.query.score == 100) {
         return(
@@ -206,10 +207,9 @@ function shareTwitter() {
 }
 // 링크복사
 const copyToClipboard=()=>{
-    var url = window.document.location.href;
     var input = document.createElement("input");
     document.body.appendChild(input);
-    input.value=url;
+    input.value=`https://swf-alpha.vercel.app/Result?score=${router.query.score}`;
     input.select();
     document.execCommand("copy");
     document.body.removeChild(input)
@@ -221,6 +221,7 @@ const copyToClipboard=()=>{
       {/* <Head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
       </Head> */}
+      {console.log(level)}
       <div className="result-wrapper">
         <img className="bg-line" src="/bg_lines.png" alt="line"/>
         <h1 className="result-header">스우파 과몰입 점수</h1>
