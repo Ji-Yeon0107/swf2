@@ -275,10 +275,18 @@ body {
     font-size:1.3em;
 }
 .kakao-link-btn {
-   display:block;
-   margin:18px auto;
+   /* display:block;
+   margin:18px auto; */
    cursor:pointer;
+   margin-top:26px;
+   margin-left:20px;
+   margin-right:20px;
 }
+
+.result-share-icon {
+    text-align:center;
+}
+
 .tomain {
     margin: 100px auto 0;
     display:block;
