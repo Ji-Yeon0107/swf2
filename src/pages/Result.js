@@ -166,6 +166,23 @@ useEffect(()=>{
     setScore(0);
   }
 })
+// 트위터공유
+function shareTwitter() {
+  var sendText = "스우파 과몰입꾼 테스트";
+  var sendUrl = `https://swf-alpha.vercel.app/Result?score=${router.query.score}`;
+  window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+// 링크복사
+const copyToClipboard=()=>{
+    var url = window.document.location.href;
+    var input = document.createElement("input");
+    document.body.appendChild(input);
+    input.value=url;
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input)
+    alert('링크가 복사되었습니다!')
+}
 
     return (
       <div className="result-wrapper">
@@ -179,15 +196,31 @@ useEffect(()=>{
           <div className="result-share-text">위 결과 공유하기</div>
           <div className="result-share-line"></div>
         </div>
-        <img 
-          className="kakao-link-btn" 
-          src="/kakao.png" 
-          alt="kakao-share"
-          onClick={()=>{
-            conosle.log('응?')
-          test();
-        }} />
+        <div>
+          <div>
+            <img 
+            className="kakao-link-btn" 
+            src="/kakao.png" 
+            alt="kakao-share"
+            onClick={()=>{
+              test();
+          }} />
+          </div>
+          <div>
+          <img 
+            className="kakao-link-btn" 
+            src="/kakao.png" 
+            alt="kakao-share"
+            onClick={()=>{
+              shareTwitter();
+          }} />
+          </div>
+          
+          
+        </div>
+        <div onClick={()=>{copyToClipboard()}}>링크 복사하기</div>
         <Link href="/"><a className="tomain">테스트 하러 가기</a></Link>
+        
     </div>
     );
   }

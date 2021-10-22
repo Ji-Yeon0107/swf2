@@ -15,6 +15,11 @@ const App = ({ Component }) => (
             name="viewport"
             content="width=device-width, initial-scale=1.0"
             />
+            <meta name="twitter:card" content="summary"></meta>
+            <meta property="og:url" content="https://swf-alpha.vercel.app/" />
+            <meta property="og:title" content="스우파 과몰입꾼 테스트" />
+            <meta property="og:description" content="헤이마마좀 춰본 정도..?" />
+            <meta property="og:image" content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg" />
             <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
             <script>
                 Kakao.init('178a2bb850640c5dee765d4a93e39bfb');
