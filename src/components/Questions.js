@@ -92,12 +92,13 @@ if(test) {
                                     const selectedAnswer = document.querySelector('.correct');
                                     selectedAnswer.className +=' selected'
                                     selectedAnswer.classList.remove('pre-select');
+                                    setScore(score+questions[index].score)
                                 }
                                 setClick(false);
 
                                 nextQuestion();
 
-                                setScore(score+questions[index].score);
+                                ;
                             
                             
                             }
@@ -164,12 +165,13 @@ if(test) {
                            
                            selectedAnswer.className +=' selected'
                            selectedAnswer.classList.remove('pre-select');
+                           setScore(score+questions[index].score);
                         }
 
                            setClick(false);
 
                             nextQuestion();
-                            setScore(score+questions[index].score);
+                           
                         
                             
                         }
