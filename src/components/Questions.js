@@ -12,6 +12,8 @@ export const Questions = () => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useRecoilState(scoreState);
 
+    const [click, setClick] = useState(true);
+
     // 다음문제 넘어갈 때 동작
     const nextQuestion = () =>{
         setTimeout(()=>{
@@ -20,17 +22,17 @@ export const Questions = () => {
         },500)
         clearTimeout();
     }
-    
+   
     useEffect(()=>{
         if(test) {
             if(index<questions.length) {
-
-                // 클래스명 추가,제거
-                const selectedAnswer = document.querySelector('.selected')
-                console.log('reload')
-                selectedAnswer.classList.remove('selected');
-                selectedAnswer.className +=' pre-select'
-
+                
+                
+            // 클래스명 추가,제거      
+                    const selectedAnswer = document.querySelector('div.selected')
+                    selectedAnswer.classList.remove('selected');
+                    selectedAnswer.className +=' pre-select'
+                    setClick(true);
 
                 // 진행바 길이 (width)변화
                 let pickedBar = document.querySelector('.bar');
@@ -85,17 +87,17 @@ if(test) {
                         </div> */}
                         <div className="answer-list">
                             <div className="correct answer-list-item pre-select" onClick={function(){
-                                //테두리생기게 혹은 배경색바뀌게
-                                
 
-                                const selectedAnswer = document.querySelector('.correct');
-                
+                                if(click) {
+                                    const selectedAnswer = document.querySelector('.correct');
+                                    selectedAnswer.className +=' selected'
+                                    selectedAnswer.classList.remove('pre-select');
+                                }
+                                setClick(false);
 
-                                selectedAnswer.className +=' selected'
-
-                                selectedAnswer.classList.remove('pre-select');
                                 nextQuestion();
-                            setScore(score+questions[index].score);
+
+                                setScore(score+questions[index].score);
                             
                             
                             }
@@ -103,11 +105,16 @@ if(test) {
                             
                             </div>
                             <div className="incorrect pre-select answer-list-item" onClick={function(){
-                               const selectedAnswer = document.querySelector('.incorrect');
-                               
+                              
+                              if(click){
+                              const selectedAnswer = document.querySelector('.incorrect');
+                              selectedAnswer.className +=' selected'
+                            selectedAnswer.classList.remove('pre-select');
+                            }
 
-                               selectedAnswer.className +=' selected'
-                               selectedAnswer.classList.remove('pre-select');
+                               setClick(false);
+
+
                                 nextQuestion();
                             }
                             }>{questions[index].incorrect}</div>
@@ -152,23 +159,32 @@ if(test) {
                     <div className="answer-list ">
                         <div className="correct answer-list-item pre-select" onClick={()=>{
 
+                        if(click){
                            const selectedAnswer = document.querySelector('.answer-list>div')
                            
                            selectedAnswer.className +=' selected'
                            selectedAnswer.classList.remove('pre-select');
+                        }
+
+                           setClick(false);
 
                             nextQuestion();
                             setScore(score+questions[index].score);
+                        
                             
                         }
                         }>
                             {questions[0].correct}
                         </div>
-                        <div className="pre-select  answer-list-item" onClick={()=>{
-                         const selectedAnswer = document.querySelector('.answer-list>div')
+                        <div className="pre-select answer-list-item" onClick={()=>{
 
+                            if(click){
+                         const selectedAnswer = document.querySelector('.answer-list>div')
                          selectedAnswer.className +=' selected'
                          selectedAnswer.classList.remove('pre-select');
+                            }
+                         setClick(false);
+
 
                             nextQuestion();
                         }
