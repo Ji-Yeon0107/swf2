@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRecoilState } from 'recoil'
 import { startState } from '../states/states'
 import { scoreState } from '../states/states';
-// import Head from './Head'
+import Head from 'next/head';
 
 const Result = () => {
 
@@ -192,6 +192,10 @@ const copyToClipboard=()=>{
 }
 
     return (
+      <>
+      {/* <Head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
+      </Head> */}
       <div className="result-wrapper">
         <img className="bg-line" src="/bg_lines.png" alt="line"/>
         <h1 className="result-header">스우파 과몰입 점수</h1>
@@ -203,32 +207,33 @@ const copyToClipboard=()=>{
           <div className="result-share-text">위 결과 공유하기</div>
           <div className="result-share-line"></div>
         </div>
-        <div>
-          <div>
+        <div className="result-share-icon">
             <img 
             className="kakao-link-btn" 
             src="/kakao.png" 
-            alt="kakao-share"
+            alt="share"
             onClick={()=>{
               test();
           }} />
-          </div>
-          <div>
           <img 
             className="kakao-link-btn" 
-            src="/kakao.png" 
-            alt="kakao-share"
+            src="/twitter.png" 
+            alt="share"
             onClick={()=>{
               shareTwitter();
           }} />
-          </div>
-          
-          
+          <img 
+            className="kakao-link-btn" 
+            src="/share.png" 
+            alt="share"
+            onClick={()=>{
+              copyToClipboard()
+          }} />
         </div>
-        <div onClick={()=>{copyToClipboard()}}>링크 복사하기</div>
         <Link href="/"><a className="tomain">테스트 하러 가기</a></Link>
         
     </div>
+    </>
     );
   }
 

@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil';
 import { startState } from '../states/states';
 import { scoreState } from '../states/states';
 import { showResultState } from '../states/states';
+import Head from 'next/head';
 
 const Home = () => {
 
@@ -17,9 +18,11 @@ const Home = () => {
         setStart(false);
         setScore(0);
     },[])
-    
     return(
         <>
+            {/* <Head>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
+            </Head> */}
             {
                 start
                 ?(
