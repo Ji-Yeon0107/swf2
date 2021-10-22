@@ -8,7 +8,6 @@ import Image from 'next/image'
 
 export const Questions = () => {
     
-    const [test, setTest] = useState(false);
     const [index, setIndex] = useState(0);
     const [score, setScore] = useRecoilState(scoreState);
 
@@ -17,35 +16,39 @@ export const Questions = () => {
     // 다음문제 넘어갈 때 동작
     const nextQuestion = () =>{
         setTimeout(()=>{
-            setTest(true);
             setIndex(index+1);
         },500)
         clearTimeout();
     }
    
     useEffect(()=>{
-        if(test) {
+        if(index>0) {
             if(index<questions.length) {
+                // 3지선다에서 2지선다로 넘어갈 때 A3 없애기
+                if(questions[index].A3.A===""){
+                    const hideAnswer = document.querySelector('div.answer3');
+                    hideAnswer.style.display="none";
+                }
+
+                // 클래스명 추가,제거  
+                const selectedAnswer = document.querySelector('div.selected')
+                selectedAnswer.classList.remove('selected');
+                selectedAnswer.className +=' pre-select'
+                setClick(true);
                 
-                
-            // 클래스명 추가,제거      
-                    const selectedAnswer = document.querySelector('div.selected')
-                    selectedAnswer.classList.remove('selected');
-                    selectedAnswer.className +=' pre-select'
-                    setClick(true);
 
                 // 진행바 길이 (width)변화
                 let pickedBar = document.querySelector('.bar');
                 pickedBar.style.width = `calc((100% / ${questions.length}) * (1 + ${index}))`
 
                 // 보기 위치 무작위 배치
-                const checkAnswer = () => {
-                    var a = document.querySelector('.answer-list');
-                    for (var i = a.children.length; i >= 0; i--) {
-                        a.appendChild(a.children[Math.random() * i | 0]);
-                    }
-                }
-                checkAnswer();
+                // const checkAnswer = () => {
+                //     var a = document.querySelector('.answer-list');
+                //     for (var i = a.children.length; i >= 0; i--) {
+                //         a.appendChild(a.children[Math.random() * i | 0]);
+                //     }
+                // }
+                // checkAnswer();
             }
         }
     },[index])
@@ -59,14 +62,25 @@ const trimIndex = ()=>{
         trimedIndex
     )
 }
+// 문제진행바 제어
+const controllBar = ()=> {
+    if(index<questions.length) {
+        return(
+            <div className="bar-box" style={barBoxStyle}>
+                <div className="bar" style={barStyle}></div>
+            </div>
+        )
+    }
+}
 
-// 마지막문제를 풀면 화면 이동
+
 const showPage = ()=> {
-if(test) {
+    // 마지막 문제까지 뿌려질 html
     if(index<questions.length){
         return(
             <div>
                 <div className="question-number">{trimIndex()}</div>
+                {controllBar()}
                 <div className="question-imgbox">
                     <img
                         className="question-img"
@@ -74,51 +88,63 @@ if(test) {
                         alt="question"
                     />
                     </div>
-                <div className="question">{questions[index].Q}</div>
+                    {
+                        questions[index].Q1==null
+                        ?(
+                            <div className="question">{questions[index].Q}</div>
+                        )
+                        :(<div className="question">
+                            <span>{questions[index].Q}</span>
+                            <span className="red">{questions[index].Q1}</span>
+                            <span>{questions[index].Q2}</span>
+                        </div>
+                        )
+                    }
+               
                 <div className="answer">
-                    {/* <ul className="answer-bg">
-                        <li className="answer-bg-list"></li>
-                        <li className="answer-bg-list"></li>
-                    </ul> */}
                     <div className="answer-box">
-                        {/* <div className="answer-number">
-                            <div>A. </div>
-                            <div>B. </div>
-                        </div> */}
                         <div className="answer-list">
-                            <div className="correct answer-list-item pre-select" onClick={function(){
+                            <div className="answer1 answer-list-item pre-select" onClick={function(){
 
                                 if(click) {
-                                    const selectedAnswer = document.querySelector('.correct');
+                                    const selectedAnswer = document.querySelector('.answer1');
                                     selectedAnswer.className +=' selected'
                                     selectedAnswer.classList.remove('pre-select');
-                                    setScore(score+questions[index].score)
+                                    setScore(score+questions[index].A1.score)
                                 }
                                 setClick(false);
-
                                 nextQuestion();
-
-                                ;
-                            
-                            
                             }
-                            }>{questions[index].correct}
+                            }>{questions[index].A1.A}
                             
                             </div>
-                            <div className="incorrect pre-select answer-list-item" onClick={function(){
+                            <div className="answer2 pre-select answer-list-item" onClick={function(){
                               
                               if(click){
-                              const selectedAnswer = document.querySelector('.incorrect');
+                              const selectedAnswer = document.querySelector('.answer2');
                               selectedAnswer.className +=' selected'
                             selectedAnswer.classList.remove('pre-select');
+                            setScore(score+questions[index].A2.score)
                             }
 
                                setClick(false);
-
-
                                 nextQuestion();
                             }
-                            }>{questions[index].incorrect}</div>
+                            }>{questions[index].A2.A}</div>
+
+                            <div className="answer3 pre-select answer-list-item" onClick={function(){
+                                                        
+                                if(click){
+                                const selectedAnswer = document.querySelector('.answer3');
+                                selectedAnswer.className +=' selected'
+                                selectedAnswer.classList.remove('pre-select');
+                                }
+
+                                setClick(false);
+                                    nextQuestion();
+                                }
+                                }>{questions[index].A3.A}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,92 +152,26 @@ if(test) {
             
         )
     } else {
+
+        //마지막문제 후 화면
+
     return (
-        <div>
-            <h1>결과를 확인해보세요!<br/>과연 나의 점수는?</h1>
+        <div className="check-result">
+            <p>🥁🥁🥁</p>
+            <p>두구두구두구두구</p>
+            <p>나의 과몰입 점수는?</p>
             <Link href={`/Result?score=${score}`} as="/result" >
-                <button className="check-result-button">결과 확인하기</button>
+                <button className="check-result-button">점수 확인하기</button>
             </Link>
         </div>
     )
-}
-}else{
-        return(
-        <div>
-            <div className="question-number">{trimIndex()}</div>
-            <div className="question-imgbox">
-                <img
-                    className="question-img"
-                    src={`/q1.jpg`}
-                    alt="question"
-                />
-            </div>
-            <div className="question">{questions[0].Q}</div>
-            <div className="answer">
-                {/* <ul className="answer-bg">
-                    <li className="answer-bg-list"></li>
-                    <li className="answer-bg-list"></li>
-                </ul> */}
-                <div className="answer-box">
-                    {/* <div className="answer-number">
-                        <div>A. </div>
-                        <div>B. </div>
-                    </div> */}
-                    <div className="answer-list ">
-                        <div className="correct answer-list-item pre-select" onClick={()=>{
-
-                        if(click){
-                           const selectedAnswer = document.querySelector('.answer-list>div')
-                           
-                           selectedAnswer.className +=' selected'
-                           selectedAnswer.classList.remove('pre-select');
-                           setScore(score+questions[index].score);
-                        }
-
-                           setClick(false);
-
-                            nextQuestion();
-                           
-                        
-                            
-                        }
-                        }>
-                            {questions[0].correct}
-                        </div>
-                        <div className="pre-select answer-list-item" onClick={()=>{
-
-                            if(click){
-                         const selectedAnswer = document.querySelector('.answer-list>div')
-                         selectedAnswer.className +=' selected'
-                         selectedAnswer.classList.remove('pre-select');
-                            }
-                         setClick(false);
-
-
-                            nextQuestion();
-                        }
-                        }>{questions[0].incorrect}</div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-        )
 }
 }
 
     return(
         <div className="wrapper">
             <div className="inner">
-            {
-            index<questions.length
-            ?(
-                <div className="bar-box" style={barBoxStyle}>
-                    <div className="bar" style={barStyle}></div>
-                </div>
-            )
-            :null
-            }
-            {showPage()}
+                {showPage()}
             </div>
         </div>
     )
@@ -219,9 +179,8 @@ if(test) {
 
 const barBoxStyle = {
     width:"100%",
-    height:"6px",
+    height:"5px",
     background:"rgba(255,255,255,0.6)",
-    marginBottom:"12px",
 }
 
 const barStyle = {
