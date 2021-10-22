@@ -47,14 +47,14 @@ body {
     border:1px solid rgba(255,255,255,0);
     height:100%;
     background:url(../../public/bg_lines.png) no-repeat;
-    background-size:398px 260px;
+    background-size:398px 320px;
     background-position-x:center;
     background-position-y: top;
     
 }
 .logo {
     display:block;
-    margin: 210px auto 100px;
+    margin: 268px auto 210px;
 }
 .start-button {
     font-family:agroM;
@@ -64,8 +64,8 @@ body {
     color:rgb(255,255,255);
     border-radius:50px;
     text-align:center;
-    width:290px;
-    height:52px;
+    width:250px;
+    height:45px;
     line-height:52px;
     font-size:24px;
     margin:0 auto;
@@ -73,26 +73,29 @@ body {
     cursor:pointer;
 }
 
+/* 문제화면 */
 .wrapper {
     width:100%;
     height:500px;
     min-height:100vh;
     background-image: url('../../public/test_bg.png');
     background-size:cover;
-    padding-bottom:25vh;
+    padding-bottom:35vh;
 }
 .inner {
-    width:84%;
+    width:320px;
     margin:0 auto;
-    padding-top:40px;
+    padding-top:38px;
 }
+
 .question-number {
     color:rgb(255,255,255);
-    font-size:2.4em;
+    font-size:40px;
     font-family:agroB;
-    margin-bottom:42px;
+    margin-bottom:16px;
 }
 .question-imgbox {
+    margin-top:50px;
     margin-bottom:35px;
     text-align:center;
     height:220px;
@@ -110,19 +113,16 @@ body {
     font-size:1.8em;
     font-family:agroM;
     margin-bottom:35px;
+    word-break:keep-all;
 }
-/* 세트 */
-/* .answer-bg {
-    position:absolute;
-    width:100%;
-    max-height:130px;
+.red {
+    color:rgb(238, 40, 40);
 }
-.answer-bg-list {
-    min-height:53px;
-    margin-bottom:20px;
-    border-radius:50px;
-    background:rgba(255,255,255,0.8);
-} */
+.question>span {
+    font-size:inherit;
+    font-family:agroM;
+}
+
 .answer-number,
 .answer-list {
     width:100%;
@@ -134,7 +134,8 @@ body {
 }
 .answer-list-item {
     /* min-height:50px; */
-    height:47px;
+    width:320px;
+    height:45px;
     padding:12px;
     line-height:23px;
     margin-bottom:20px;
@@ -164,6 +165,29 @@ body {
     transition:all 400ms;
 }
 /* 결과랜딩창 */
+.check-result {
+    width:100%;
+    margin-top:170px;
+}
+.check-result>p {
+    text-align:center;
+    margin:0;
+    color:rgb(255,255,255);
+}
+.check-result>p:nth-child(1) {
+    font-size:70px;
+    font-family:agroM;
+    margin-bottom:36px;
+}
+.check-result>p:nth-child(2) {
+    margin-bottom:15px;
+    font-size:20px;
+}
+.check-result>p:nth-child(3) {
+    font-family:agroB;
+    font-size: 30px;
+    margin-bottom:58px;
+}
 .check-result-button {
     font-family:agroM;
     outline:none;
@@ -215,9 +239,11 @@ body {
 }
 .result {
     width:100%;
-    
     text-align:center;
     font-size:1.3em;
+}
+.result-desc {
+    word-break: keep-all;
 }
 .result-title {
     font-size:1.4em;
@@ -260,7 +286,7 @@ body {
     font-size:1.3em;
     line-height:42px;
     color:rgb(255,255,255);
-    background:rgba(30, 36, 168, 0.8);
+    background:rgba(70, 70, 200, 1);
     border-radius:50px;
     width:85%;
     max-width:400px;
