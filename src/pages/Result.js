@@ -49,7 +49,7 @@ const Result = () => {
       } else if(router.query.score>=0 && router.query.score<5) {
         setLevel('그냥... "지나가던 행인"')
       }
-    },[])
+    },[test])
 
     
     const classifyScore = () =>{
