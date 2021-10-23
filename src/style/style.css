@@ -54,7 +54,7 @@ body {
 }
 .logo {
     display:block;
-    margin: 268px auto 210px;
+    margin: 268px auto 160px;
 }
 .start-button {
     font-family:agroM;
@@ -68,7 +68,7 @@ body {
     height:45px;
     line-height:52px;
     font-size:24px;
-    margin:0 auto;
+    margin:0 auto 20px;
     display:block;
     cursor:pointer;
 }
