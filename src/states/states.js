@@ -19,3 +19,8 @@ export const levelState = atom({
   key : 'levelState',
   default: '',
 })
+
+export const imgURLState = atom({
+  key : 'imgURLState',
+  default: '',
+})

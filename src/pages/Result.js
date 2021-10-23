@@ -5,6 +5,8 @@ import { useRecoilState } from 'recoil'
 // import { startState } from '../states/states'
 import { scoreState } from '../states/states';
 import { levelState } from '../states/states';
+import { imgURLState } from '../states/states';
+
 import Head from 'next/head';
 
 const Result = () => {
@@ -16,6 +18,8 @@ const Result = () => {
 
     const [level, setLevel] = useRecoilState(levelState);
     
+    const [imgURL, setImgURL] = useRecoilState(imgURLState);
+
     const test = () => {
         Kakao.Link.createCustomButton({
           container: '.kakao-link-btn',
@@ -23,36 +27,11 @@ const Result = () => {
           templateArgs: {
             'score': router.query.score,
             'level': `${level}`,
-            'url': "/result.png"
+            'url': imgURL
   }
 });
     }
-    // useEffect(()=>{
-    //   if(router.query.score == 100) {
-    //    setLevel(`과몰입 상위 1% "스우파 처돌이"`)
-    //   } else if(router.query.score>=90 && router.query.score<100) {
-    //     setLevel(`과몰입 상위 20% "스우파 중독자"`)
-       
-    //   } else if(router.query.score>=65 && router.query.score<90) {
-    //     setLevel(`과몰입 상위 35% "스우파 쁘띠중독"`)
-      
-    //   } else if(router.query.score>=50 && router.query.score<65) {
-    //     setLevel(`과몰입 상위 50% "스우파며드는 중`)
-       
-    //   } else if(router.query.score>=35 && router.query.score<50) {
-    //     setLevel(`항문기는 아니고 "스우파 입덕부정기`)
-      
-    //   } else if(router.query.score>=15 && router.query.score<35) {
-    //     setLevel(`과몰입 하위 35% "어디서 본 건 있는 사람"`)
-      
-    //   } else if(router.query.score>=5 && router.query.score<15) {
-    //     setLevel(`과몰입 하위 15% "스우파를 모르고 죽을뻔한 사람"`)
-    //   } else if(router.query.score>=0 && router.query.score<5) {
-    //     setLevel(`그냥... "지나가던 행인"`)
-    //   }
-    // },[test])
 
-    
     const classifyScore = () =>{
       if(router.query.score == 100) {
         return(
@@ -227,7 +206,6 @@ const copyToClipboard=()=>{
       {/* <Head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
       </Head> */}
-      {console.log(level)}
       <div className="result-wrapper">
         <img className="bg-line" src="/bg_lines.png" alt="line"/>
         <h1 className="result-header">스우파 과몰입 점수</h1>
