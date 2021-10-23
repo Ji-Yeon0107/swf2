@@ -21,7 +21,7 @@ const Result = () => {
           templateId: 63843,
           templateArgs: {
             'score': router.query.score,
-            'level': level,
+            'level': `과몰입 상위 1% "스우파 처돌이"`,
             'level2': router.query.score,
             'url': "/result.png"
   }
