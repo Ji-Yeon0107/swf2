@@ -9,6 +9,7 @@ const Questions = () => {
     
     const [index, setIndex] = useState(0);
     const [score, setScore] = useRecoilState(scoreState);
+    const [level, setLevel] = useRecoilState(levelState);
 
     const [click, setClick] = useState(true);
 
