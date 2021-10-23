@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useRecoilState } from 'recoil'
-import { startState } from '../states/states'
+// import { startState } from '../states/states'
 import { scoreState } from '../states/states';
 import Head from 'next/head';
 
@@ -10,7 +10,7 @@ const Result = () => {
 
     const router = useRouter();
 
-    const [start, setStart] = useRecoilState(startState);
+    // const [start, setStart] = useRecoilState(startState);
     const [score, setScore] = useRecoilState(scoreState);
 
     const [level, setLevel] = useState("");
@@ -22,6 +22,7 @@ const Result = () => {
           templateArgs: {
             'score': router.query.score,
             'level': level,
+            'level2': router.query.score,
             'url': "/result.png"
   }
 });
@@ -195,7 +196,7 @@ useEffect(()=>{
 })
 useEffect(()=>{
   return ()=>{
-    setStart(false);
+    // setStart(false);
     setScore(0);
   }
 })
