@@ -9,7 +9,9 @@ const App = ({ Component }) => (
 
     <>
         <Head>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
+            {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script> */}
+
+     
             <meta name="twitter:card" content="summary"></meta>
             <meta property="og:url" content="https://swf-alpha.vercel.app/" />
             <meta property="og:title" content="스우파 과몰입꾼 테스트" />

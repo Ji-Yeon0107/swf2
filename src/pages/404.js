@@ -13,6 +13,9 @@ const Custom404 = ()=>{
             <div className="wrong-directory">
                 
                 <h1>스우파 과몰입꾼 테스트 하러가실래요?</h1>
+                <div>
+                    <img style={imgStyle} src="/q1.jpg" alt="pic" />
+                </div>
                 <Link href={`/`} >
                     <a>지금 하러가기</a>
                 </Link>
@@ -20,6 +23,10 @@ const Custom404 = ()=>{
             </div>
         </>
     )
+}
+
+const imgStyle = {
+    width:"300px",
 }
 
 export default Custom404
