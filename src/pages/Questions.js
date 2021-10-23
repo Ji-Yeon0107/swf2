@@ -3,6 +3,7 @@ import {questions} from '../data/questions'
 import Link from "next/link";
 import { useRecoilState } from 'recoil';
 import { scoreState } from '../states/states';
+import { levelState } from '../states/states';
 
 
 const Questions = () => {
