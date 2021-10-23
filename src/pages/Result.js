@@ -21,33 +21,33 @@ const Result = () => {
           templateId: 63843,
           templateArgs: {
             'score': router.query.score,
-            'level': level,
+            'level': `${level}`,
             'url': "/result.png"
   }
 });
     }
     useEffect(()=>{
-      if(score == 100) {
-       setLevel('과몰입 상위 1% "스우파 처돌이"')
-      } else if(score>=90 && score<100) {
-        setLevel('과몰입 상위 20% "스우파 중독자"')
+      if(router.query.score == 100) {
+       setLevel(`과몰입 상위 1% "스우파 처돌이"`)
+      } else if(router.query.score>=90 && router.query.score<100) {
+        setLevel(`과몰입 상위 20% "스우파 중독자"`)
        
-      } else if(score>=65 && score<90) {
-        setLevel('과몰입 상위 35% "스우파 쁘띠중독"')
+      } else if(router.query.score>=65 && router.query.score<90) {
+        setLevel(`과몰입 상위 35% "스우파 쁘띠중독"`)
       
-      } else if(score>=50 && score<65) {
-        setLevel('과몰입 상위 50% "스우파며드는 중')
+      } else if(router.query.score>=50 && router.query.score<65) {
+        setLevel(`과몰입 상위 50% "스우파며드는 중`)
        
-      } else if(score>=35 && score<50) {
-        setLevel('항문기는 아니고 "스우파 입덕부정기')
+      } else if(router.query.score>=35 && router.query.score<50) {
+        setLevel(`항문기는 아니고 "스우파 입덕부정기`)
       
-      } else if(score>=15 && score<35) {
-        setLevel('과몰입 하위 35% "어디서 본 건 있는 사람"')
+      } else if(router.query.score>=15 && router.query.score<35) {
+        setLevel(`과몰입 하위 35% "어디서 본 건 있는 사람"`)
       
-      } else if(score>=5 && score<15) {
-        setLevel('과몰입 하위 15% "스우파를 모르고 죽을뻔한 사람"')
-      } else if(score>=0 && score<5) {
-        setLevel('그냥... "지나가던 행인"')
+      } else if(router.query.score>=5 && router.query.score<15) {
+        setLevel(`과몰입 하위 15% "스우파를 모르고 죽을뻔한 사람"`)
+      } else if(router.query.score>=0 && router.query.score<5) {
+        setLevel(`그냥... "지나가던 행인"`)
       }
     },[test])
 
@@ -180,15 +180,20 @@ const Result = () => {
           </>
         )
 
-      }else {
-        return(
+      }else if(router.query.score === null ){
         <>
-            <p>뭔가 잘못됐어요 😅</p>
-            <p className="result-title"> 다시 진행해주세요</p>
+          <p>뭔가 잘못됐어요 😅</p>
+          <p className="result-title"> 다시 진행해주세요</p>
         </>
-        )
-      }
+    } else {
+      return(
+      <>
+          <p>뭔가 잘못됐어요 😅</p>
+          <p className="result-title"> 다시 진행해주세요</p>
+      </>
+      )
     }
+  }
 
 useEffect(()=>{
   test();
