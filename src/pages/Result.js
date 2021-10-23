@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil'
 import { scoreState } from '../states/states';
 import { levelState } from '../states/states';
 import { imgURLState } from '../states/states';
+import Ad from '../components/Ad'
 
 import Head from 'next/head';
 
@@ -203,9 +204,6 @@ const copyToClipboard=()=>{
 
     return (
       <>
-      {/* <Head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
-      </Head> */}
       <div className="result-wrapper">
         <img className="bg-line" src="/bg_lines.png" alt="line"/>
         <h1 className="result-header">스우파 과몰입 점수</h1>
@@ -243,6 +241,7 @@ const copyToClipboard=()=>{
         <Link href="/"><a className="tomain">테스트 하러 가기</a></Link>
         
     </div>
+
     </>
     );
   }

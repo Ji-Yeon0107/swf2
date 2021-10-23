@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Ad from '../components/Ad'
 
 class MyDocument extends Document {
 
@@ -12,6 +13,8 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+            <Ad />
         </body>
       </Html>
     )

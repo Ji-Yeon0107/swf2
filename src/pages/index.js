@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil';
 import { startState } from '../states/states';
 import { scoreState } from '../states/states';
 import Head from 'next/head';
+import Ad from '../components/Ad'
 
 const Home = () => {
 
@@ -27,7 +28,6 @@ const Home = () => {
                         // setStart(true);
                     }}>시작!!</button>
                 </Link>
-                <div>광고</div>
             </div>
             {/* {
                 start
@@ -38,7 +38,6 @@ const Home = () => {
                    
                 )
             } */}
-            
         </>
        
     )

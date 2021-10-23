@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import Head from 'next/head';
+import Ad from '../components/Ad'
 
 
 const Custom404 = ()=>{

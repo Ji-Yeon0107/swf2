@@ -5,6 +5,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { scoreState } from '../states/states';
 import { levelState } from '../states/states';
 import { imgURLState } from '../states/states';
+import Ad from '../components/Ad'
 
 
 const Questions = () => {
@@ -211,11 +212,13 @@ const showPage = ()=> {
 }
 
     return(
-        <div className="wrapper">
-            <div className="inner">
-                {showPage()}
+        <>
+            <div className="wrapper">
+                <div className="inner">
+                    {showPage()}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
