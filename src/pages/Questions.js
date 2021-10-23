@@ -63,34 +63,33 @@ const Questions = () => {
     // 공유 score, level 저장
     useEffect(()=>{
         return ()=>{
-            console.log(imgURL);
                 if(score == 100) {
                  setLevel(`과몰입 상위 1% "스우파 처돌이"`);
-                 setImgURL("/result1.png");
+                 setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result1.png");
                 } else if(score>=90 && score<100) {
                   setLevel(`과몰입 상위 20% "스우파 중독자"`);
-                  setImgURL("/result2.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result2.png");
                 } else if(score>=65 && score<90) {
                   setLevel(`과몰입 상위 35% "스우파 쁘띠중독"`);
-                  setImgURL("/result3.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result3.png");
                 } else if(score>=50 && score<65) {
                   setLevel(`과몰입 상위 50% "스우파며드는 중`);
-                  setImgURL("/result4.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result4.png");
                  
                 } else if(score>=35 && score<50) {
                   setLevel(`항문기는 아니고 "스우파 입덕부정기`);
-                  setImgURL("/result5.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result5.png");
                 
                 } else if(score>=15 && score<35) {
                   setLevel(`과몰입 하위 35% "어디서 본 건 있는 사람"`);
-                  setImgURL("/result6.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result6.png");
                 
                 } else if(score>=5 && score<15) {
                   setLevel(`과몰입 하위 15% "스우파를 모르고 죽을뻔한 사람"`);
-                  setImgURL("/result7.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result7.png");
                 } else if(score>=0 && score<5) {
                   setLevel(`그냥... "지나가던 행인"`);
-                  setImgURL("/result8.png");
+                  setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result8.png");
                 }
               
         }
