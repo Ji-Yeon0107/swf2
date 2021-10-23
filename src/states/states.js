@@ -12,5 +12,10 @@ export const scoreState = atom({
 
 export const showResultState = atom({
   key : 'showResultState',
-  defalt: false,
+  default: false,
+})
+
+export const levelState = atom({
+  key : 'levelState',
+  default: '',
 })
