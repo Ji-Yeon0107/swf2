@@ -20,7 +20,6 @@ const Custom404 = ()=>{
                 <Link href={`/`} >
                     <a>지금 하러가기</a>
                 </Link>
-                <div>광고</div>
             </div>
         </>
     )
