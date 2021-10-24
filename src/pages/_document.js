@@ -8,6 +8,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+        <link rel="shortcut icon" href="swf.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
         </Head>
         <body>
