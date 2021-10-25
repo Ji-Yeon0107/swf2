@@ -1,14 +1,37 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router'
+import * as gtag from '../lib/gtag'
+
 import PropTypes from 'prop-types';
 import { RecoilRoot } from 'recoil';
 import '../style/style.css'
 
 
-const App = ({ Component }) => (
-
+const App = ({ Component }) => {
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+  
+  return(
     <>
         <Head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}></script>
+        <script>
+          {
+          `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', gtag.GA_TRACKING_ID);`
+          }
+        </script>
             {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script> */}
             <meta name="twitter:card" content="summary"></meta>
             <meta property="og:url" content="https://swf-alpha.vercel.app/" />
@@ -24,7 +47,8 @@ const App = ({ Component }) => (
       {/* <GlobalStyle />
       <Normalize /> */}
     </>
-  );
+  )
+  }
   
   App.propTypes = {
     Component: PropTypes.elementType.isRequired,

@@ -8,9 +8,9 @@ const Custom404 = ()=>{
 
     return(
         <>
-            {/* <Head>
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script>
-            </Head> */}
+            <Head>
+                   <title>스우파 과몰입꾼 테스트하러 가실래요?</title>
+            </Head>
             <div className="wrong-directory">
                 
                 <h1>스우파 과몰입꾼 테스트 하러가실래요?</h1>
