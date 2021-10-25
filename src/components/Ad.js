@@ -4,7 +4,6 @@ const Ad = ()=> {
 
     return(
         <>
-            {console.log('되고있는지확인')}
             <ins className="kakao_ad_area" style={{display:'none'}}
             data-ad-unit    = "DAN-SpwCJsfDZK6tsKrx" 
             data-ad-width   = "320" 

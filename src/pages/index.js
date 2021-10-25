@@ -19,6 +19,7 @@ const Home = () => {
     return(
         <> 
             <div className="main-wrapper">
+            
                 <p>
                 <img className="logo" src="/logo.png" alt="logo" />
                 </p>

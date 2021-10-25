@@ -25,7 +25,7 @@ body {
 /* 잘못된 경로 */
 .wrong-directory {
     width:100%;
-    min-height:calc(100vh - 115px);
+    min-height:calc(100vh - 15px);
     height:calc(100% - 100px);
     padding-top:200px;
     text-align:center;
@@ -46,17 +46,18 @@ body {
 /* 시작화면 */
 .main-wrapper {
     border:1px solid rgba(255,255,255,0);
-    min-height:calc(100vh - 125px);
-    height:calc(100% - 100px);
+    min-height:100vh;
+    height:calc(100% - 15px);
     background:url(../../public/bg_lines.png) no-repeat;
     background-size:398px 320px;
     background-position-x:center;
     background-position-y: top;
+    padding-bottom:50px;
     
 }
 .logo {
     display:block;
-    margin: 230px auto 170px;
+    margin: 230px auto 110px;
 }
 .start-button {
     font-family:agroM;
@@ -80,8 +81,8 @@ body {
     width:100%;
     /* height:500px;
     min-height:100vh; */
-    min-height:calc(100vh - 115px);
-    height:calc(100% - 100px);
+    min-height:calc(100vh - 15px);
+    height:100%;
     background-image: url('../../public/test_bg.png');
     background-size:cover;
     padding-bottom:25vh;
@@ -89,18 +90,18 @@ body {
 .inner {
     width:320px;
     margin:0 auto;
-    padding-top:26px;
+    padding-top:18px;
 }
 
 .question-number {
     color:rgb(255,255,255);
     font-size:40px;
     font-family:agroB;
-    margin-bottom:16px;
+    margin-bottom:3px;
 }
 .question-imgbox {
-    margin-top:48px;
-    margin-bottom:35px;
+    margin-top:18px;
+    margin-bottom:15px;
     text-align:center;
     height:220px;
 }
@@ -116,7 +117,7 @@ body {
     color:rgb(255,255,255);
     font-size:30px;
     font-family:agroM;
-    margin-bottom:35px;
+    margin-bottom:16px;
     word-break:keep-all;
 }
 .red {
@@ -149,8 +150,6 @@ body {
 
 }
 
-/* 세트끝
- */
 .answer {
     width:100%;
     position:relative;
