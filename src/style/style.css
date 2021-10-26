@@ -291,6 +291,8 @@ body {
 
 .result-share-icon {
     text-align:center;
+    position:relative;
+    z-index:100;
 }
 
 .tomain {
