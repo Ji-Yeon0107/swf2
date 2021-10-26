@@ -238,7 +238,13 @@ const copyToClipboard=()=>{
       }
         <div className="result-share">
           <div className="result-share-line"></div>
-          <div className="result-share-text">위 결과 공유하기</div>
+          <div className="result-share-text">
+            {
+              lang=="Kor"
+              ?"위 결과 공유하기"
+              :"Share Your Score"
+            }
+          </div>
           <div className="result-share-line"></div>
         </div>
         <div className="result-share-icon">
