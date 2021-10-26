@@ -24,3 +24,8 @@ export const imgURLState = atom({
   key : 'imgURLState',
   default: '',
 })
+
+export const langState = atom({
+  key : 'langState',
+  default: 'Kor',
+})

@@ -53,12 +53,15 @@ body {
     background-size:398px 320px;
     background-position-x:center;
     background-position-y: top;
-    /* padding-bottom:50px; */
     
+}
+#lang-select {
+    display:block;
+    margin:10px auto 0;
 }
 .logo {
     display:block;
-    margin: 230px auto 110px;
+    margin: 198px auto 110px;
 }
 .start-button {
     font-family:agroM;

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRecoilState } from 'recoil'
 import { scoreState } from '../states/states';
 import { levelState } from '../states/states';
+import { langState } from '../states/states';
 import { imgURLState } from '../states/states';
 
 const Result = () => {
@@ -13,6 +14,7 @@ const Result = () => {
     const [score, setScore] = useRecoilState(scoreState);
 
     const [level, setLevel] = useRecoilState(levelState);
+    const [lang, setLang] = useRecoilState(langState);
     
     const [imgURL, setImgURL] = useRecoilState(imgURLState);
 
@@ -192,7 +194,11 @@ useEffect(()=>{
 })
 // 트위터공유
 function shareTwitter() {
-  var sendText = "스우파 과몰입꾼 테스트";
+  if(lang=="Kor") {
+    var sendText = "스우파 과몰입꾼 테스트";
+  } else if(lang="Eng") {
+    var sendText = "Test How Much You Love Street Woman Fighter";
+  }
   var sendUrl = `https://swf-alpha.vercel.app/Result?score=${router.query.score}`;
   window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
 }
@@ -210,11 +216,26 @@ const copyToClipboard=()=>{
     return (
       <>
       <div className="result-wrapper">
-        <img className="bg-line" src="/bg_lines.png" alt="line"/>
-        <h1 className="result-header">스우파 과몰입 점수</h1>
-        <div className="result">
-         {classifyScore()} 
-        </div>
+      <img className="bg-line" src="/bg_lines.png" alt="line"/>
+      {
+        lang=="Kor"
+        ?(
+          <>
+            <h1 className="result-header">스우파 과몰입 점수</h1>
+            <div className="result">
+            {classifyScore()} 
+            </div>
+          </>
+        )
+        :(
+          <>
+            <h1 className="result-header">Your Score is</h1>
+            <div className="result" style={{fontSize:"45px",fontColor:"yellow",fontFamily:"agroB"}}>
+            {score}!!!
+            </div>
+          </>
+        )
+      }
         <div className="result-share">
           <div className="result-share-line"></div>
           <div className="result-share-text">위 결과 공유하기</div>
@@ -243,7 +264,13 @@ const copyToClipboard=()=>{
               copyToClipboard()
           }} />
         </div>
-        <Link href="/"><a className="tomain">테스트 하러 가기</a></Link>
+        <Link href="/"><a className="tomain">
+          {
+              lang=="Kor"
+            ?"테스트 하러 가기"
+            :"go to test"
+          } 
+          </a></Link>
         
     </div>
 

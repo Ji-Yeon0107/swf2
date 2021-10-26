@@ -1,22 +1,36 @@
 import React, {useState, useEffect} from 'react';
-import {questions} from '../data/questions'
+import {questionsKor} from '../data/questions'
+import {questionsEng} from '../data/questionsEng'
 import Link from "next/link";
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { scoreState } from '../states/states';
 import { levelState } from '../states/states';
+import { langState } from '../states/states';
 import { imgURLState } from '../states/states';
 import Ad from '../components/Ad'
 
+
+var questions = questionsKor
+console.log(questionsKor);
 
 const Questions = () => {
     
     const [index, setIndex] = useState(0);
     const [score, setScore] = useRecoilState(scoreState);
     const [level, setLevel] = useRecoilState(levelState);
+    const [lang, setLang] = useRecoilState(langState);
     const [imgURL, setImgURL] = useRecoilState(imgURLState);
 
     const [click, setClick] = useState(true);
+    let [questions, setQuestions] = useState(questionsKor);
 
+    useEffect(()=>{
+        if(lang==='Kor'){
+            setQuestions(questionsKor);
+        }else if(lang==='Eng'){
+            setQuestions(questionsEng);
+        }
+    },[])
     // 다음문제 넘어갈 때 동작
     const nextQuestion = () =>{
         setTimeout(()=>{
@@ -206,12 +220,30 @@ const showPage = ()=> {
         
     return (
         <div className="check-result">
-            <p>🥁🥁🥁</p>
-            <p>두구두구두구두구</p>
-            <p>나의 과몰입 점수는?</p>
-            <Link href={`/Result?score=${score}`} as="/result" >
-                <button className="check-result-button">점수 확인하기</button>
-            </Link>
+            {
+                lang=='Kor'
+                ?(
+                    <>
+                        <p>🥁🥁🥁</p>
+                        <p>두구두구두구두구</p>
+                        <p>나의 과몰입 점수는?</p>
+                        <Link href={`/Result?score=${score}`} as="/result" >
+                            <button className="check-result-button">점수 확인하기</button>
+                        </Link>
+                    </>
+                )
+                :(
+                    <>
+                        <p>🥁🥁🥁</p>
+                        <p>🥁Drum roll🥁</p>
+                        <p>My score is..</p>
+                        <Link href={`/Result?score=${score}`} as="/result" >
+                            <button className="check-result-button">Check Your Score</button>
+                        </Link>
+                    </>
+                )
+            }
+            
         </div>
     )
 }

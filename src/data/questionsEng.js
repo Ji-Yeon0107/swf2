@@ -1,61 +1,61 @@
-export const questionsKor = [
+export const questionsEng = [
     {
-        Q: "제트썬 앞에서 제대로 해야하는 것은?",
+        Q: "You make sure to do ___ properly in front of ZSUN",
         image: "",
         A1:{
-            A:"트월킹",
+            A:"Twerking",
             score:0,
         },
         A2:{
-            A:"윌리바운스",
+            A:"Willie bounce",
             score:3,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "가비가 하는 장사는?",
+        Q: "What does GABEE sell?",
         image: "",
         A1:{
-            A:"가발",
+            A:"wig",
             score:0,
         },
         A2:{
-            A:"속눈썹",
+            A:"eyelashes",
             score:3,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "이 장면의 대사를 맞춰주세요!",
+        Q: "What did she say in this scene?",
         image: "",
         A1:{
-            A:"대잔치처럼 너무 재미있을 거 같아요",
+            A:"Would be fun like a big party!",
             score:6,
         },
         A2:{
-            A:"믓찌다(?) 믓찌다(?) 울언니",
+            A:"You,re so cool, Unnie",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "솔직히 헤이마마 춤춰본적 있다? vs 없다?",
+        Q: "TBH, have you ever danced to 'hey, mama'?",
         image: "",
         A1:{
-            A:"⭕️ 있다",
+            A:"⭕️ Yes",
             score:6,
         },
         A2:{
-            A:"❌ 없다",
+            A:"❌ No",
             score:0,
         },
         A3:{
@@ -64,83 +64,83 @@ export const questionsKor = [
         },
     },
     {
-        Q: "본명이 혜인인 멤버가 ",
-        Q1:"없는 ",
-        Q2: "크루는?",
+        Q: "Which crew ",
+        Q1:"doesn't have ",
+        Q2: "a member of which name is Hye-In?",
         image: "",
         A1:{
-            A:"코카앤버터",
+            A:"CocaNButter",
             score:0,
         },
         A2:{
-            A:"원트",
+            A:"WANT",
             score:6,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "YGX가 외친 구호가 ",
-        Q1: "아닌 ",
-        Q2: "것은?",
+        Q: "What is ",
+        Q1: "not ",
+        Q2: "the slogan YGX shouted?",
         image: "",
         A1:{
-            A:"찢자 찢자 Fight!",
+            A:"Kill it, kill it, Fight!",
             score:6,
         },
         A2:{
-            A:"괜찮아 괜찮아 Aghit!",
+            A:"Alright, Alright, Aghit!",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     
     {
-        Q: "리헤이가 입을 가린 이유는?",
+        Q: "Why is Ri.hey covering her mouth?",
         image: "",
         A1:{
-            A:"김밥을 먹고 있어서",
+            A:"Because she's eating Kimbap",
             score:10,
         },
         A2:{
-            A:"비트박스를 하기 위해",
+            A:"for beatbox",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "홀리뱅 제인의 별명이 된 것은?",
+        Q: "What is HolyBang Jane's nickname?",
         image: "",
         A1:{
-            A:"나무",
+            A:"Tree",
             score:6,
         },
         A2:{
-            A:"잡초",
+            A:"Weeds",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "스우파 출연 댄서 인스타 5명 이상 팔로우 했다",
+        Q: "I followed more than 5 S.W.F dancers' Instagram",
         image: "",
         A1:{
-            A:"⭕️ 했다",
+            A:"⭕️ Yes",
             score:6,
         },
         A2:{
-            A:"❌ 안했다",
+            A:"❌ No",
             score:0,
         },
         A3:{
@@ -149,72 +149,72 @@ export const questionsKor = [
         },
     },
     {
-        Q: "빠른 92인 효진초이는 92년생과 친구를 할 수 있다? vs 없다?",
+        Q: "Hyojin Choi can be friends with s/o who's born in early 1992",
         image: "",
         A1:{
-            A:"❌ 족보 꼬여서 안됨",
+            A:"❌ Never",
             score:10,
         },
         A2:{
-            A:"⭕️ 92년생과 칭구칭긔",
+            A:"⭕️ Sure",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "이 장면의 대사를 맞춰주세요!",
+        Q: "What's the right words for this scene?",
         image: "",
         A1:{
-            A:"케.리.리.케",
+            A:"Ke.Ri.Ri.Ke",
             score:0,
         },
         A2:{
-            A:"케.라.라.케",
+            A:"Ke.Ra.Ra.Ke",
             score:6,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "리정이 먹고 입에서 녹아내린다고 한 음식은?",
+        Q: "What food did LeeJung say melts in her mouth?",
         image: "",
         A1:{
-            A:"성게알",
+            A:"Sea urchin roe",
             score:10,
         },
         A2:{
-            A:"참치회",
+            A:"tuna sashimi",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "윤경이가 몇학년때 아이키를 만났을까?",
+        Q: "What grade YoonGyeong meet Aiki on?",
         image: "",
         A1:{
-            A:"5학년",
+            A:"Fifth grade",
             score:0,
         },
         A2:{
-            A:"6학년",
+            A:"Sixth grade",
             score:6,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
 
     {
-        Q: "노제의 MBTI는?",
+        Q: "What is NO:ZE's MBTI?",
         image: "",
         A1:{
             A:"ENTP",
@@ -225,23 +225,23 @@ export const questionsKor = [
             score:10,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
     {
-        Q: "현재 같은 집에서 함께 사는 댄서는?",
+        Q: "Who are living together now?",
         image: "",
         A1:{
-            A:"모니카-립제이",
+            A:"MONIKA-LipJ",
             score:6,
         },
         A2:{
-            A:"리헤이-제트썬",
+            A:"Ri.hey-ZSUN",
             score:0,
         },
         A3:{
-            A:'모름',
+            A:'skip',
             score:0,
         },
     },
