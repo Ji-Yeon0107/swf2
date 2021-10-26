@@ -18,6 +18,19 @@ const Result = () => {
     
     const [imgURL, setImgURL] = useRecoilState(imgURLState);
 
+    // 브라우저 언어 확인
+    useEffect(()=>{
+      function getLanguage() {
+        return navigator.language || navigator.userLanguage;
+      }
+      if(getLanguage()=="ko-KR"){
+        setLang("Kor");
+      }else{
+        setLang("Eng");
+      }
+    },[])
+    
+
     const test = () => {
         Kakao.Link.createCustomButton({
           container: '.kakao-link-btn',
