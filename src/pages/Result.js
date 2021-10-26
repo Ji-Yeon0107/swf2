@@ -20,14 +20,15 @@ const Result = () => {
 
     // 브라우저 언어 확인
     useEffect(()=>{
-      function getLanguage() {
-        return navigator.language || navigator.userLanguage;
-      }
-      if(getLanguage()=="ko-KR" || getLanguage()=="ko" ){
-        setLang("Kor");
-      }else{
-        setLang("Eng");
-      }
+      setLang("Kor");
+      // function getLanguage() {
+      //   return navigator.language || navigator.userLanguage;
+      // }
+      // if(getLanguage()=="ko-KR" || getLanguage()=="ko" ){
+      //   setLang("Kor");
+      // }else{
+      //   setLang("Eng");
+      // }
     },[])
     
 
