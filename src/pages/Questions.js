@@ -91,7 +91,13 @@ const Questions = () => {
                 } else if(score>=0 && score<5) {
                   setLevel(`그냥... "지나가던 행인"`);
                   setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/result8.png");
-                }
+                } else if(score===null || score===undefined) {
+                    setLevel(`몇 점일까?`);
+                    setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/logo.png");
+                  }else {
+                    setLevel(`몇 점일까?`);
+                    setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/logo.png");
+                  }
               
         }
     })

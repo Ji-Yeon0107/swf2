@@ -2,19 +2,14 @@ import React, {useEffect, useState} from 'react'
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useRecoilState } from 'recoil'
-// import { startState } from '../states/states'
 import { scoreState } from '../states/states';
 import { levelState } from '../states/states';
 import { imgURLState } from '../states/states';
-import Ad from '../components/Ad'
-
-import Head from 'next/head';
 
 const Result = () => {
 
     const router = useRouter();
 
-    // const [start, setStart] = useRecoilState(startState);
     const [score, setScore] = useRecoilState(scoreState);
 
     const [level, setLevel] = useRecoilState(levelState);
@@ -32,9 +27,22 @@ const Result = () => {
   }
 });
     }
+    useEffect(()=> {
+      setLevel('몇 점일까?');
+      setScore('?');
+      setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/logo.png")
+
+    },[])
 
     const classifyScore = () =>{
-      if(router.query.score == 100) {
+      if(router.query.score === undefined || router.query.score ==""){
+        return(
+        <>
+          <p>뭔가 잘못됐어요 !!!😅</p>
+          <p className="result-title"> 다시 진행해주세요</p>
+        </>
+        )
+    } else if(router.query.score == 100) {
         return(
           <>
             <h2><span className="result-score high-score">{router.query.score}</span><span>점!!!</span></h2>
@@ -144,44 +152,36 @@ const Result = () => {
         )
       } else if(router.query.score>=0 && router.query.score<5) {
        
-        return(
-          <>
-            <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
-            <p>나는... 그냥</p>
-            <p className="result-title low-score">"지나가던 행인"</p>
-            <p>입니다.</p>
-            <img src="/score8.png" className="result-img" alt="result" />
-            <p className="result-desc">
-            친구들이 스우파 이야기를 하고 스우파 춤을 따라 출 때<br/>
+      return(
+        <>
+          <h2><span className="result-score low-score">{router.query.score}</span><span>점!!!</span></h2>
+          <p>나는... 그냥</p>
+          <p className="result-title low-score">"지나가던 행인"</p>
+          <p>입니다.</p>
+          <img src="/score8.png" className="result-img" alt="result" />
+          <p className="result-desc">
+          친구들이 스우파 이야기를 하고 스우파 춤을 따라 출 때<br/>
 끼지 못하고 갯마을 이야기로 화제를 돌리던 당신..<br/>
 스우파 종영 소식에 오히려 기뻤던 당신입니다. <br/><br/>
 당신은 아마 평생에 후회할 큰 실수를 저질렀을 겁니다. <br/>
 스우파가 방영하는 매주 화요일은 흥의 민족에게 민족 대명절과도 같은 날이었기 때문이죠.
-            </p>
-          </>
-        )
-
-      }else if(router.query.score === null ){
-        <>
-          <p>뭔가 잘못됐어요 😅</p>
-          <p className="result-title"> 다시 진행해주세요</p>
+          </p>
         </>
+      )
     } else {
       return(
       <>
-          <p>뭔가 잘못됐어요 😅</p>
+          <p>뭔가 잘못됐어요!! 😅</p>
           <p className="result-title"> 다시 진행해주세요</p>
       </>
       )
     }
   }
-
 useEffect(()=>{
   test();
 })
 useEffect(()=>{
   return ()=>{
-    // setStart(false);
     setScore(0);
   }
 })
