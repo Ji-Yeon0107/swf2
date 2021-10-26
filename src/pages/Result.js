@@ -29,13 +29,15 @@ const Result = () => {
     }
     useEffect(()=> {
       if(level===""){
-      setLevel('테스트를 하지 않고 점수를 공유하는 자!');
-      setScore('');
-      setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/logo.png")
-}
-      test();
+        setLevel('테스트를 하지 않고 점수를 공유하는 자!');
+        setScore('');
+        setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/logo.png");
+        test();
+      }else {
+        test();
+      }
+      
     })
-    console.log(level)
 
     const classifyScore = () =>{
       if(router.query.score === undefined || router.query.score ==""){
