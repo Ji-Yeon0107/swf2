@@ -33,7 +33,9 @@ const Result = () => {
       setScore('');
       setImgURL("https://raw.githubusercontent.com/Ji-Yeon0107/swf2/main/public/logo.png")
 }
-    },[])
+      test();
+    })
+    console.log(level)
 
     const classifyScore = () =>{
       if(router.query.score === undefined || router.query.score ==""){
@@ -179,7 +181,7 @@ const Result = () => {
     }
   }
 useEffect(()=>{
-  test();
+  // test();
 })
 useEffect(()=>{
   return ()=>{
