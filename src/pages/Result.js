@@ -23,7 +23,8 @@ const Result = () => {
       function getLanguage() {
         return navigator.language || navigator.userLanguage;
       }
-      if(getLanguage()=="ko-KR"){
+      console.log(getLanguage())
+      if(getLanguage()=="ko-KR" || getLanguage()=="ko" ){
         setLang("Kor");
       }else{
         setLang("Eng");
