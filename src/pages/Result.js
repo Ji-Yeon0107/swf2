@@ -23,7 +23,6 @@ const Result = () => {
       function getLanguage() {
         return navigator.language || navigator.userLanguage;
       }
-      console.log(getLanguage())
       if(getLanguage()=="ko-KR" || getLanguage()=="ko" ){
         setLang("Kor");
       }else{
@@ -245,7 +244,7 @@ const copyToClipboard=()=>{
           <>
             <h1 className="result-header">Your Score is</h1>
             <div className="result" style={{fontSize:"45px",fontColor:"yellow",fontFamily:"agroB"}}>
-            {score}!!!
+            {router.query.score}!!!
             </div>
           </>
         )
