@@ -33,7 +33,9 @@ const App = ({ Component }) => {
           }
         </script>
             {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2695315085641819" crossorigin="anonymous"></script> */}
-            <meta name="twitter:card" content="summary"></meta>
+            <meta name="naver-site-verification" content="dbca9d353538b4bbea1f9810bd4fc39c9165ab0b" />
+            <meta name="description" content="스우파 과몰입꾼 테스트 하고 가세요." />
+            <meta name="twitter:card" content="summary" />
             <meta property="og:url" content="https://swf-alpha.vercel.app/" />
             <meta property="og:title" content="스우파 과몰입꾼 테스트" />
             <meta property="og:description" content="헤이마마좀 춰본 정도..?" />
